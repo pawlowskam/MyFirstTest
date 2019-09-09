@@ -41,7 +41,7 @@ public class MyFirstTest {
             lastName.clear();
             lastName.sendKeys("Kowalski");
 
-            WebElement gender = driver.findElement(By.name("gender"));
+            WebElement gender = driver.findElement(By.xpath("/html/body/div/div/form/div[3]/div/div/label[1]/input"));
             gender.click();
             gender.sendKeys("Male");
 
@@ -70,12 +70,12 @@ public class MyFirstTest {
             comment.sendKeys("To jest mój pierwszy automat testowy");
 
             // Prześlij formularz
-            //element.submit();
+            driver.findElement(By.id("infoForm")).submit();
         }
         @After
         public void tearDown() throws Exception {
             // Zamknij przeglądarkę
-            //driver.quit();
+            driver.quit();
         }
     }
 
